@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Suduko</title>
+  <script src="main.js"></script>
+  <style>
+    .cell {
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .border-top {
+      border-top: solid 3px black;
+    }
+
+    .border-bottom {
+      border-bottom: solid 3px black;
+    }
+
+    .border-left {
+      border-left: solid 3px black;
+    }
+
+    .border-right {
+      border-right: solid 3px black;
+    }
+
+    .sudoku {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sudoku">
+    <table>
+      <tr>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+      </tr>
+      <tr>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+      </tr>
+      <tr>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+      </tr>
+      <tr>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+      </tr>
+      <tr>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+      </tr>
+      <tr>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+      </tr>
+      <tr>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+      </tr>
+      <tr>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+      </tr>
+      <tr>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+        <td><input class="cell" type="text" oninput="validate(this)"></td>
+      </tr>
+    </table>
+    <button id="solve_button">Solve</button>
+  </div>
+</body>
+
+</html>
